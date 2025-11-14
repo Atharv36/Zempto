@@ -38,10 +38,17 @@ connectDB().catch(err => {
     console.error('Database connection error:', err);
 });
 
+// Test route to verify function is working
+app.get("/api/test", (req, res) => {
+    res.json({ message: "API function is working", timestamp: new Date().toISOString() });
+});
+
+// Root route
 app.get("/", (req, res) => {
     res.json({ message: "Hello there, server is running" });
 });
 
+// API routes
 app.use('/api/user', userRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/file', uploadImageRouter);
@@ -50,6 +57,24 @@ app.use('/api/product', productRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/address', addressRouter);
 app.use("/api/order", orderRouter);
+
+// 404 handler for unmatched routes
+app.use((req, res) => {
+    res.status(404).json({ 
+        error: true, 
+        message: "Route not found",
+        path: req.path 
+    });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    res.status(500).json({ 
+        error: true, 
+        message: err.message || "Internal server error" 
+    });
+});
 
 // Export app for Vercel serverless
 export default app;
