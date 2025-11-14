@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    @apply bg-blue-50 text-neutral-700 scroll-smooth
+}
+.scrollbar-none::-webkit-scrollbar{
+    display: none;
+}
+
+
+.scrollbarCustom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbarCustom::-webkit-scrollbar-track {
+  background-color: #f1f5f9; 
+  border-radius: 10px;
+}
+
+.scrollbarCustom::-webkit-scrollbar-thumb {
+    /* cursor: pointer; */
+  background-color: #cbd5e1; 
+  border-radius: 10px;
+  border: 2px solid #f1f5f9; 
+}
+
+.scrollbarCustom::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
