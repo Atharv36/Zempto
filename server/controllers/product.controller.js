@@ -1,4 +1,3 @@
-import successAlert from "../../client/utils/SuccessAlert.js"
 import ProductModel from "../models/product.model.js"
 
 export const createProductController =  async(req,res)=>{
