@@ -12,10 +12,10 @@ const Footer = () => {
                 <a href="http://" >
                     <FaInstagramSquare className='hover:text-[#b55dbb]'/>
                 </a>
-                <a href="http://">
+                <a href="https://in.linkedin.com/in/atharv-uscoicar-4b50432a0">
                     <FaLinkedin className='hover:text-[#b55dbb]'/>
                 </a>
-                <a href="http://">
+                <a href="https://github.com/Atharv36">
                     <FaGithub className='hover:text-[#b55dbb]'/>
                 </a>
             </div>
@@ -26,3 +26,4 @@ const Footer = () => {
 }
 
 export default Footer
+
